@@ -1,47 +1,28 @@
 package lista;
 
-import java.util.Scanner;
-
 public class questao5 {
 
 	public static void main(String[] args) {
-		Scanner leia = new Scanner (System.in);
 		
-		int numero;
-		
-		System.out.println("Digite um número: ");
-		numero = leia.nextInt();
-		
-		
+		for (int i = 10; i < 100; i++ ) {
+			if (verPrimos(i)) {
+				System.out.println(i);
+			}
+		}		
 
 	}
-	static boolean Nprimos (int numero) {
+	static boolean verPrimos (int numero) {
 		
 		int marcador = 0;
-		int primos = 0;
 		
 		for(int cont = 1; cont <= numero; cont++) {
 			if(numero % cont == 0 ) {
 				marcador ++;
 			}
+			if(marcador > 2) {		
+				return false;
+			}
 		}
-		
-		if(marcador == 2) {
-			primos ++;
-			
-			return true;
-		}
-		
-		return false;
+		return true;
 	}
-	
-//	static int Imprimir (int numeros) {
-//		
-//		int divisor = 1;
-//		
-//		for(int cont = 1; cont <= 100; cont++) {
-//			if(divisor % cont == 0 && divisor == cont && divisor != 0  ) {
-//			}
-//		}
-//	}
 }
